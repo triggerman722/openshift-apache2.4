@@ -93,7 +93,7 @@ LoadModule auth_form_module modules/mod_auth_form.so
 #LoadModule ratelimit_module modules/mod_ratelimit.so
 LoadModule reqtimeout_module modules/mod_reqtimeout.so
 #LoadModule ext_filter_module modules/mod_ext_filter.so
-#LoadModule request_module modules/mod_request.so
+LoadModule request_module modules/mod_request.so
 #LoadModule include_module modules/mod_include.so
 LoadModule filter_module modules/mod_filter.so
 #LoadModule substitute_module modules/mod_substitute.so
@@ -119,9 +119,9 @@ LoadModule version_module modules/mod_version.so
 #LoadModule proxy_ajp_module modules/mod_proxy_ajp.so
 #LoadModule proxy_balancer_module modules/mod_proxy_balancer.so
 #LoadModule proxy_express_module modules/mod_proxy_express.so
-#LoadModule session_module modules/mod_session.so
-#LoadModule session_cookie_module modules/mod_session_cookie.so
-#LoadModule session_dbd_module modules/mod_session_dbd.so
+LoadModule session_module modules/mod_session.so
+LoadModule session_cookie_module modules/mod_session_cookie.so
+LoadModule session_dbd_module modules/mod_session_dbd.so
 #LoadModule slotmem_shm_module modules/mod_slotmem_shm.so
 #LoadModule ssl_module modules/mod_ssl.so
 #LoadModule lbmethod_byrequests_module modules/mod_lbmethod_byrequests.so
@@ -133,7 +133,7 @@ LoadModule unixd_module modules/mod_unixd.so
 LoadModule status_module modules/mod_status.so
 LoadModule autoindex_module modules/mod_autoindex.so
 #LoadModule info_module modules/mod_info.so
-#LoadModule cgid_module modules/mod_cgid.so
+LoadModule cgid_module modules/mod_cgid.so
 #LoadModule dav_fs_module modules/mod_dav_fs.so
 #LoadModule vhost_alias_module modules/mod_vhost_alias.so
 #LoadModule negotiation_module modules/mod_negotiation.so
