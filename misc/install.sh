@@ -47,5 +47,7 @@ rm -r $OPENSHIFT_RUNTIME_DIR/tmp/*.tar.gz
 cp $OPENSHIFT_REPO_DIR/misc/templates/bash_profile.tpl $OPENSHIFT_HOMEDIR/app-root/data/.bash_profile
 python $OPENSHIFT_REPO_DIR/misc/httpconf.py
 
+#export $HOME to writable location
+
 # START APACHE
 $OPENSHIFT_RUNTIME_DIR/srv/httpd/bin/apachectl start
