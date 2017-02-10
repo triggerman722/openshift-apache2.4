@@ -11,27 +11,31 @@ mkdir srv/httpd
 mkdir srv/php
 mkdir tmp
 cd tmp/
-wget http://ftp.halifax.rwth-aachen.de/apache/httpd/httpd-2.4.12.tar.gz
-tar -zxf httpd-2.4.12.tar.gz
+wget http://apache.mirror.gtcomm.net//httpd/httpd-2.4.25.tar.gz
+tar -zxf httpd-2.4.25.tar.gz
 wget http://artfiles.org/apache.org/apr/apr-1.5.2.tar.gz
 tar -zxf apr-1.5.2.tar.gz
-mv apr-1.5.2 httpd-2.4.12/srclib/apr
-wget http://artfiles.org/apache.org/apr/apr-util-1.5.2.tar.gz
-tar -zxf apr-util-1.5.2.tar.gz
-mv apr-util-1.5.2 httpd-2.4.12/srclib/apr-util
-wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.37.tar.gz
-tar -zxf pcre-8.37.tar.gz
-cd pcre-8.37
+mv apr-1.5.2 httpd-2.4.25/srclib/apr
+wget http://artfiles.org/apache.org/apr/apr-util-1.5.4.tar.gz
+tar -zxf apr-util-1.5.4.tar.gz
+mv apr-util-1.5.4 httpd-2.4.25/srclib/apr-util
+wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.40.tar.gz
+tar -zxf pcre-8.40.tar.gz
+cd pcre-8.40
 ./configure \
 --prefix=$OPENSHIFT_RUNTIME_DIR/srv/pcre
 make && make install
-cd ../httpd-2.4.12
+cd ../httpd-2.4.25
 ./configure \
 --prefix=$OPENSHIFT_RUNTIME_DIR/srv/httpd \
 --with-included-apr \
 --with-pcre=$OPENSHIFT_RUNTIME_DIR/srv/pcre \
 --enable-so \
+--enable-load-all-modules \
 --enable-auth-digest \
+--enable-load-all-modules \
+--enable-auth-digest \
+--enable-auth-form \
 --enable-rewrite \
 --enable-setenvif \
 --enable-mime \
