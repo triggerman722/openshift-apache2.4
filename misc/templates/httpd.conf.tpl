@@ -49,7 +49,7 @@ ServerRoot "{{OPENSHIFT_RUNTIME_DIR}}/srv/httpd"
 # prevent Apache from glomming onto all bound IP addresses.
 #
 #Listen 12.34.56.78:80
-Listen {{OPENSHIFT_INTERNAL_IP}}:8080
+Listen {{OPENSHIFT_DIY_IP}}:8080
 
 #
 # Dynamic Shared Object (DSO) Support
@@ -78,7 +78,7 @@ LoadModule authz_user_module modules/mod_authz_user.so
 LoadModule authz_core_module modules/mod_authz_core.so
 LoadModule access_compat_module modules/mod_access_compat.so
 LoadModule auth_basic_module modules/mod_auth_basic.so
-#LoadModule auth_form_module modules/mod_auth_form.so
+LoadModule auth_form_module modules/mod_auth_form.so
 #LoadModule auth_digest_module modules/mod_auth_digest.so
 #LoadModule allowmethods_module modules/mod_allowmethods.so
 #LoadModule file_cache_module modules/mod_file_cache.so
@@ -143,7 +143,7 @@ LoadModule dir_module modules/mod_dir.so
 #LoadModule userdir_module modules/mod_userdir.so
 LoadModule alias_module modules/mod_alias.so
 #LoadModule rewrite_module modules/mod_rewrite.so
-LoadModule php5_module        modules/libphp5.so
+#LoadModule php5_module        modules/libphp5.so
 
 <IfModule unixd_module>
 #
@@ -348,7 +348,6 @@ LogLevel warn
     Require all granted
 </Directory>
 
-AddHandler php5-script    .php 
 
 <IfModule mime_module>
     #
