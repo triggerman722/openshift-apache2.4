@@ -33,8 +33,6 @@ cd ../httpd-2.4.25
 --enable-so \
 --enable-load-all-modules \
 --enable-auth-digest \
---enable-load-all-modules \
---enable-auth-digest \
 --enable-auth-form \
 --enable-rewrite \
 --enable-setenvif \
