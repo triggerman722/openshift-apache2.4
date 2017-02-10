@@ -28,6 +28,8 @@ make && make install
 cd ../httpd-2.4.25
 ./configure \
 --prefix=$OPENSHIFT_RUNTIME_DIR/srv/httpd \
+--with-crypto \
+--with-openssl \
 --with-included-apr \
 --with-pcre=$OPENSHIFT_RUNTIME_DIR/srv/pcre \
 --enable-so \
